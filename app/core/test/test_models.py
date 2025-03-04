@@ -1,16 +1,12 @@
 """
 Tests for models.
 """
-from unittest.mock import patch
-from decimal import Decimal
 
-from django.test import TestCase
 from django.contrib.auth import get_user_model
+from django.test import TestCase
 
-from core import models
 
-
-def create_user(email='user@example.com', password='testpass123'):
+def create_user(email="user@example.com", password="testpass123"):
     """Create a return a new user."""
     return get_user_model().objects.create_user(email, password)
 
@@ -20,8 +16,8 @@ class ModelTests(TestCase):
 
     def test_create_user_with_email_successful(self):
         """Test creating a user with an email is successful."""
-        email = 'test@example.com'
-        password = 'testpass123'
+        email = "test@example.com"
+        password = "testpass123"
         user = get_user_model().objects.create_user(
             email=email,
             password=password,
